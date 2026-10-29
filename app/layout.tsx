@@ -5,6 +5,7 @@ import {
   buildAgencyJsonLd,
   serializeJsonLdSafe,
 } from '@/lib/seo';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 
 const inter = Inter({
@@ -69,6 +70,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <Analytics />
       </body>
     </html>
   );
