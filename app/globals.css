@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    color-scheme: light;
+    background-color: #FFFFFF;
+    color: #101410;
+  }
+
+  html.dark {
+    color-scheme: dark;
+    background-color: #050C08;
+    color: #F4F9F5;
+  }
+
+  body {
+    background-color: #F6F8FC;
+    color: #0A0D14;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html.dark body {
+    background-color: #050C08;
+    color: #F4F9F5;
+  }
+  html,
+  body,
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+html.dark .hero-heading {
+  background-image: linear-gradient(
+    to bottom right,
+    #FFFFFF 0%,
+    #A7F3D0 52%,
+    #34D399 100%
+  );
+}
+
